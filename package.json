@@ -1,0 +1,23 @@
+{
+  "name": "compensatorio",
+  "version": "1.0.0",
+  "description": "codigos del compensatorio",
+  "main": "index.js",
+  "scripts": {
+    "test": "fake-data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiasSantolari/Compensatorio-TTADS.git"
+  },
+  "author": "Matias Santolari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatiasSantolari/Compensatorio-TTADS/issues"
+  },
+  "homepage": "https://github.com/MatiasSantolari/Compensatorio-TTADS#readme",
+  "dependencies": {
+    "mongoose": "^6.8.1",
+    "mongoose-fakery": "^0.1.7"
+  }
+}
