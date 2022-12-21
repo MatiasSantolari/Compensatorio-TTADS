@@ -1,11 +1,12 @@
+const mongoose = require('mongoose');
 const fakery = require('mongoose-fakery');
-const user = require('./models/user/userModel');
+const uuser = require('./models/user/userModel');
 
-fakery.fake('user', user, {
+fakery.fake('user', mongoose.model('User'), {
     name: fakery.g.name(),
     surname: fakery.g.surname(),
     email: fakery.lazy(function(attrs){
-        // this will return john@example.com
+        // this will return name@example.com
         return attrs.name + '@example.com';
     })
 
@@ -13,6 +14,5 @@ fakery.fake('user', user, {
 
 let userFakery = fakery.fake('user');
 console.log(userFakery);
-console.log(userFakery.email)
 
 //Para correrlo node fake-data.js
