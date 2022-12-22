@@ -2,9 +2,9 @@
   "name": "compensatorio",
   "version": "1.0.0",
   "description": "codigos del compensatorio",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "fake-data.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,18 @@
   },
   "homepage": "https://github.com/MatiasSantolari/Compensatorio-TTADS#readme",
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
     "mongoose": "^6.8.1",
-    "mongoose-fakery": "^0.1.7"
+    "mongoose-data-faker": "^0.1.2",
+    "mongoose-fakery": "^0.1.7",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

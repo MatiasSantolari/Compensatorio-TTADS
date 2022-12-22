@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const fakery = require('mongoose-fakery');
-const uuser = require('./models/user/userModel');
+const uuser = require('../models/user/userModel');
 
 fakery.fake('user', mongoose.model('User'), {
     name: fakery.g.name(),
