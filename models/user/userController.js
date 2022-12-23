@@ -17,16 +17,19 @@ router.get('/', async(req, res) => {
     }
 })
 
+const getFakeData = async () => {
+    return{
+    name : faker.name.fullName(),
+    surname : faker.name.lastName(),
+    email : faker.internet.email(faker.name.fullName(),faker.name.lastName())
+    }
+}
 //create
 router.post('/', async(req, res) => {
     try {
         for (let i = 0; i < 10; i++){
-            const name = faker.name.fullName(); 
-            const surname = faker.name.lastName();
-            const email = faker.internet.email(name,surname);
-            const userJSON = '{"name" : "'+ name + '", "surname" : "'+ surname +'", "email" : "'+ email +'"}';
-            console.log(userJSON);
-            await userModel.create(userJSON);
+            const fakeJsonData = await getFakeData();
+            await userModel.create(fakeJsonData);
         };
         Response.success(res,201,'usuarios agregados correctamente',{});
     } catch (error) {
