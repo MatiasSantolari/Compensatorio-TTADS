@@ -18,10 +18,12 @@ router.get('/', async(req, res) => {
 })
 
 const getFakeData = async () => {
+    let nombres = faker.name.fullName();
+    let apellido = faker.name.lastName();
     return{
-    name : faker.name.fullName(),
-    surname : faker.name.lastName(),
-    email : faker.internet.email(faker.name.fullName(),faker.name.lastName())
+    name : nombres,
+    surname : apellido,
+    email : faker.internet.email(nombres,apellido)
     }
 }
 //create
