@@ -20,7 +20,7 @@ router.get('/', async(req, res) => {
 //generador de datos falsos
 const getFakeData = async () => {
     let sexo = faker.name.sexType();
-    let nombres = faker.name.fullName(sexo);
+    let nombres = faker.name.fullName({sex:sexo});
     let apellido = faker.name.lastName();
     return{
     sex : sexo,
@@ -31,7 +31,7 @@ const getFakeData = async () => {
         apellido,
       ]),
     birthday : faker.date.birthdate(),
-    avatar : faker.image.avatar(sexo)
+    avatar : faker.image.avatar()
     }
 }
 //create
@@ -51,7 +51,7 @@ router.post('/', async(req, res) => {
 router.delete('/',async(req,res) => {
     try {
         await userModel.deleteMany();
-        Response.success(res, 200, 'Monstruo eliminado del bestiario');
+        Response.success(res, 200, 'usuarios eliminados correctamente');
     } catch (error) {
         Response.error(error);
     }
