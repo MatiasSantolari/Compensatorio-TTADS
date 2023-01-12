@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const fakery = require('mongoose-fakery');
-const uuser = require('../models/user/userModel');
+const client = require('../models/client/clientModel');
 
-fakery.fake('user', mongoose.model('User'), {
+fakery.fake('client', mongoose.model('clients'), {
     name: fakery.g.name(),
     surname: fakery.g.surname(),
     email: fakery.lazy(function(attrs){
@@ -12,7 +12,7 @@ fakery.fake('user', mongoose.model('User'), {
 
 });
 
-let userFakery = fakery.fake('user');
+let userFakery = fakery.fake('client');
 console.log(userFakery);
 
 //Para correrlo node fake-data.js
