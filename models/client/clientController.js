@@ -12,25 +12,25 @@ const fakery = require('mongoose-fakery');
 router.get('/', async(req, res) => {
     try {
         let clients = await clientModel.find();
-        Response.success(res, 200, 'Listado de clientes', clients);
+        Response.success(res, 200, 'Listado de clientes', clients.toString());
     } catch (error) {
         Response.error(res);
     }
 })
 
-//generador de datos falsos
-fakery.fake('client', mongoose.model('clients'), {
-    name: fakery.g.name(),
-    surname: fakery.g.surname(),
-    email: fakery.lazy(function(attrs){
-        // this will return name@example.com
-        return attrs.name + '@example.com';
-    })
-
-});
-
 const createFakeData = async () => {
+    //generador de datos falsos
+    fakery.fake('client', mongoose.model('clients'), {
+        name: fakery.g.name(),
+        surname: fakery.g.surname(),
+        email: fakery.lazy(function(attrs){
+            // this will return name@example.com
+            return attrs.name + '@example.com';
+        })
+    });
+
     let userFakery = await fakery.fake('client');
+    return userFakery;
 }
 //create
 router.post('/', async(req, res) => {
