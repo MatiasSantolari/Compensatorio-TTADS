@@ -23,6 +23,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "http-errors": "^2.0.0",
+    "mongo-seeding-cli": "^3.7.2",
     "mongoose": "^6.8.1",
     "mongoose-data-faker": "^0.1.2",
     "mongoose-fakery": "^0.1.7",

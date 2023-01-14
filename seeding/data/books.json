@@ -1,0 +1,31 @@
+{
+    "books": [
+        {
+            "title": "Harry Potter and the Sorcerer's Stone",
+            "author": "J.K. Rowling",
+            "ISBN": "9780590353427",
+            "pages": 223,
+            "publisher": "Scholastic Press",
+            "release_date": "1997-06-26T00:00:00.000Z",
+            "genre": "Fantasy"
+        },
+        {
+            "title": "The Lord of the Rings",
+            "author": "J.R.R. Tolkien",
+            "ISBN": "9780544003415",
+            "pages": 1178,
+            "publisher": "George Allen & Unwin",
+            "release_date": "1954-07-29T00:00:00.000Z",
+            "genre": "Fantasy"
+        },
+        {
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "ISBN": "9780547928227",
+            "pages": 295,
+            "publisher": "Houghton Mifflin Harcourt",
+            "release_date": "1937-09-21T00:00:00.000Z",
+            "genre": "Fantasy"
+        }
+    ]
+}
