@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const Seeder = require('mongo-seeding').Seeder;
 const db = require('../models/db');
-
+const path = require('path');
 const Book = require('./bookModel');
 
 const seeder = new Seeder(db);
-const collections = seeder.readCollectionsFromPath('./data');
+const bookData = path.join(__dirname, 'data', 'books.json');
+const collections = seeder.readCollectionsFromPath(bookData);
 
 seeder
   .import(collections)
